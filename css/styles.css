@@ -1,0 +1,155 @@
+/* CSS | pasquale-olivito.ch */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Gloria Hallelujah', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.height {
+    height: auto;
+}
+
+img {
+    padding: 10px;
+    background: white;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4);
+    margin-bottom: 60px;
+}
+
+.photo {
+    border-radius: 50%;
+    width: 260px;
+    height: 260px;
+    background: url(../images/pasquale-olivito.jpeg) center center / cover;
+    box-shadow: inset 0px 0px 2px;
+    position: relative;
+    float: right;
+}
+
+.text {
+    width: 100%;
+    position: relative;
+    text-transform: uppercase;
+    float: right;
+    margin-bottom: 30px;
+}
+
+
+@media screen and (min-width : 800px) {
+
+.container {
+    width: 800px;
+}
+
+.photo {
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+}
+
+.text {
+    width: 50%;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+
+.height {
+    height: 400px;
+}
+
+}
+
+.kommentare {
+    font-family: 'Arial';
+    font-size: 70%;
+    overflow: hidden;
+}
+h3 {
+    font-size: 100%;
+    font-weight: normal;
+    padding: 5px 0px;
+    margin: 8px;
+    cursor: pointer;
+}
+h3 {
+    color: black;
+}
+h3:hover {
+    color: red;
+}
+strong, .kommentar, h2, h3, .name, .email, .comment, .submit {
+    font-family: 'Arial';
+}
+h2 {
+    font-size: 100%;
+    font-weight: normal;
+    padding: 5px 0px;
+    margin: 8px;
+    cursor: pointer;
+}
+h2 {
+    color: black;
+}
+h2:hover {
+    color: red;
+}
+.kommentar {
+    padding: 10px 0px;
+    border-bottom: 1px solid black;
+}
+.form {
+    width: 100%;
+    margin: 20px 0px;
+}
+.name, .email, .comment, .submit {
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 6px;
+    background: white;
+}
+.name, .email, .comment .image {
+    width: 100%;
+}
+.submit {
+    cursor: pointer;
+}
+input::placeholder, textarea::placeholder {
+    font-family: 'Arial';
+    font-weight: normal;
+    color: black;
+    font-size: 12px;
+}
+@media screen and (min-width : 800px) {
+.form {
+    width: 50%;
+}
+}
