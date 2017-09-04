@@ -44,6 +44,7 @@ function saveToDatabase(editableObj) {
 </script>
 </head>
 <body>
+    <div id=site>
 	<header>
 		<div class="container padding-20 height">
 		<div class="photo"></div>
@@ -73,9 +74,7 @@ echo $file;
 <form class="form" id="<?php echo $file;?>" onsubmit="saveToDatabase(this)">
   <input class="image" type="hidden" name="image" value="<?php echo $file;?>" placeholder="Image:">
   <br>
-  <input class="name" type="text" name="name" placeholder="Name:">
-  <br>
-  <input class="email" type="text" name="email" placeholder="E-Mail:">
+  <input class="name" type="text" name="name" placeholder="Name:"> <input class="email" type="text" name="email" placeholder="E-Mail:">
   <br>
   <textarea class="comment" name="comment" rows="5" cols="40" placeholder="Dein Feedback:"></textarea>
   <br>
@@ -86,5 +85,6 @@ echo $file;
 <?php
 }
 ?>
+  </div>
   </body>
 </html>
