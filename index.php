@@ -57,17 +57,7 @@ function saveToDatabase(editableObj) {
     });
 })( jQuery );
 
-//    function readDatabase() {
-//        $.ajax({
-//            url: "getPictureComments.php?image=pic10-small.jpg",
-//            success: (function (result) {
-//                $("#kommentare0").html(result);
-//		alert(result);
-//            })
-//        })
-//    };
-//    readDatabase();
-//    setInterval(ajaxCall, (3000));
+
 </script>
 </head>
 <body>
@@ -95,6 +85,8 @@ echo $file;
   echo "<img src=\"img-small/$file\">";
 ?>
 
+<?php include "getPictureComments.php";?>
+
 <form class="form" id="<?php echo $file;?>" onsubmit="saveToDatabase(this)">
   <input class="image" type="hidden" name="image" value="<?php echo $file;?>" placeholder="Image:">
   <br>
@@ -106,10 +98,9 @@ echo $file;
   <br>
   <input class="submit" type="submit" name="submit" value="send" >
 </form>
-<h3>> Alle Kommentare lesen!</h3>
-<?php include "getPictureComments.php";
-//?image=".$file;
-?>
+<h3>>Kommentare</h3>
+
+
 
 <!--<h2>> Feedback geben!</h2>-->
 
