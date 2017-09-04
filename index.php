@@ -14,49 +14,32 @@
 	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
   <![endif]-->
   <meta charset="utf-8">
-  <!-- src="http://code.jquery.com/jquery-1.10.2.js"></script-->
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <!-- jQeury -->
-  <script src="jQuery.js"></script>
+  <!--<script src="jQuery.js"></script>-->
   <!-- Prefixfree.js of Lea Verou -->
   <script src="js/prefixfree.min.js"></script>
 <script>
+//document ready
+$(function() {
+  //$("form").hide();
+  $("form").submit(function(e){
+    return false;
+  })
+})
+
 function saveToDatabase(editableObj) {
-	alert('name='+editableObj.name.value+'&email='+editableObj.email.value+'&comment='+editableObj.comment.value+'&image='+editableObj.image.value);
+	editableObj
+        alert('name='+editableObj.name.value+'&email='+editableObj.email.value+'&comment='+editableObj.comment.value+'&image='+editableObj.image.value);
 	$.ajax({
-		url: "writeDatabase.php",
+		url: "./writeDatabase.php",
 		type: "POST",
 		data:'name='+editableObj.name.value+'&email='+editableObj.email.value+'&comment='+editableObj.comment.value+'&image='+editableObj.image.value,
 		success: function(data){
+                  alert("Data was succesfully captured");
 		}        
    });
 }
-
-
-(function( $ ){
-    $('#form0').hide();
-    $('h2').click(function(){
-        var link = $(this);
-        $('#form0').slideToggle(300, function() {
-            if ($(this).is(':visible')) {
-                 link.text('> schliessen!');
-            } else {
-                 link.text('> Feedback geben!');
-            }
-        });
-    });
-    $('#kommentare0').hide();
-    $('h3').click(function(){
-        var link = $(this);
-        $('#kommentare0').slideToggle(300, function() {
-            if ($(this).is(':visible')) {
-                 link.text('> schliessen!');
-            } else {
-                 link.text('> Kommentare lesen!');
-            }
-        });
-    });
-})( jQuery );
-
 
 </script>
 </head>
@@ -82,7 +65,7 @@ echo $file;
 ?>
 
 <?php
-  echo "<img src=\"img-small/$file\">";
+  echo "<img height=400 src=\"img-small/$file\">";
 ?>
 <h1>Kommentare</h1>
 <?php include "getPictureComments.php";?>
@@ -96,7 +79,7 @@ echo $file;
   <br>
   <textarea class="comment" name="comment" rows="5" cols="40" placeholder="Dein Feedback:"></textarea>
   <br>
-  <input class="submit" type="submit" name="submit" value="send" >
+  <input class="submit" type="submit">
 </form>
 
 
