@@ -84,7 +84,7 @@ echo $file;
 <?php
   echo "<img src=\"img-small/$file\">";
 ?>
-
+<h1>Kommentare</h1>
 <?php include "getPictureComments.php";?>
 
 <form class="form" id="<?php echo $file;?>" onsubmit="saveToDatabase(this)">
@@ -98,17 +98,10 @@ echo $file;
   <br>
   <input class="submit" type="submit" name="submit" value="send" >
 </form>
-<h3>>Kommentare</h3>
-
-
-
-<!--<h2>> Feedback geben!</h2>-->
-
 
 
 <?php
 }
 ?>
-
-</body>
+  </body>
 </html>
