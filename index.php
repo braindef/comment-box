@@ -24,11 +24,12 @@
 
 
 //========================================================================================================================================================================
+
 $(function() {
   $("form").submit(function(){
     return false;
   })
-getAllComments();
+  getAllComments();
 })
 
 function saveToDatabase(editableObj) {
@@ -46,8 +47,6 @@ function saveToDatabase(editableObj) {
 }
 
 //========================================================================================================================================================================
-
-
 
   function getAllComments() {
     var nodelist = document.querySelectorAll("div.comments");
