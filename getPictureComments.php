@@ -6,16 +6,19 @@ setlocale(LC_TIME, "de_CH.utf8"); //für deutsche Wochentage und Monate
 require_once "db_controller.php";
 $db = new DBController();
 
+$file="";
+if ($_POST["file"] != "") $file=($_POST["file"]);
+
 $date = $name = $email = $comment = "";
+//$query = "SELECT * FROM comments;";
 $query = "SELECT * FROM comments where image=\"".$file."\"";
-//$query = "SELECT * FROM comments where image=\"".$_GET["image"]."\"";
-//$query = "SELECT * FROM comments where image=;"; pic1-small.jpg
+
 $resultset = $db->runQuery($query);
 
 if ($resultset == NULL)
 {
   echo "Noch kein Feedback vorhanden!";
-} 
+}
 else
 {
   foreach($resultset as $key=>$value)
@@ -34,5 +37,4 @@ else
     echo "</div>";
   }
 }
-
 ?>

@@ -32,9 +32,5 @@ class DBController {
             $stmt = $this->db->prepare($query);
             $stmt->execute();
     }
-
-
 }
-
-
 ?>

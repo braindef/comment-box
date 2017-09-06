@@ -1,19 +1,19 @@
 <?php
 
-setlocale(LC_TIME, "de_DE.UTF-8"); //für deutsche Wochentage und Monate
-setlocale(LC_TIME, "de_CH.utf8"); //für deutsche Wochentage und Monate
+setlocale(LC_TIME, "de_DE.UTF-8");
+setlocale(LC_TIME, "de_CH.utf8");
 
 require_once "db_controller.php";
 $db = new DBController();
 
 $date = $name = $email = $comment = "";
-$query = "SELECT * FROM comments;";
+$query = "SELECT * FROM comments where image=\"".$_GET["image"]."\"";
 $resultset=$db->runQuery($query);
 
 if ($resultset == NULL)
 {
   echo "Noch kein Feedback vorhanden!";
-} 
+}
 else
 {
   foreach($resultset as $key=>$value)

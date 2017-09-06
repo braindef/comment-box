@@ -2,9 +2,6 @@
 require_once "db_controller.php";
 $db = new DBController();
 
-$DEBUG=true;
-
-
 $name = $email = $comments = "";
 $date = date("Y-m-d H:i");
 
@@ -24,14 +21,6 @@ function test_input($data) {
 
 $query = "INSERT INTO comments (name, email, comment, date, image) VALUES ('$name', '$email', '$comments', '$date', '$image');";
 
-if ($DEBUG==true) echo $query;
-
 $db->executeInsert($query);
 
-//header('Location: http://localhost/comment-box');
-
 ?>
-
-<script>
-alert("WriteDatabase");
-</script>
